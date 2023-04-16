@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+
+<h1>Programa de calculo de IMC</h1>
+
+<script>
+
+function saltarLinea() {
+    document.write("<br>");
+     document.write("<br>");
+}
+
+function imprimir(frase) {
+    document.write("<big>" + frase + "</big>");
+    saltarLinea();
+}
+
+function calcularImc(peso,altura){
+
+   imc = peso/ (altura*altura);
+   return imc;
+}
+
+var nombre = prompt("Informe su nombre por favor");
+var pesoInformado = prompt(nombre + " , Informe su peso x favor");
+var alturaInformada = prompt(nombre + " , Informe su altura por favor");
+
+imcCalculado = calcularImc(pesoInformado,alturaInformada);
+
+if (imcCalculado < 19){
+    imprimir("IMC por debajo de lo recomendado");
+    }
+
+
+if (imcCalculado >=19){
+     if (imcCalculado < 24.9){
+         imprimir("IMC dentro de los parametros normales");    
+     }
+    
+    }
+
+if (imcCalculado > 24.9 && imcCalculado < 30){
+    imprimir("IMC considerado como PRE-Obesidad");
+    }    
+
+if (imcCalculado >= 30){
+    imprimir("Obesidad grado 1");
+    }    
+
+imprimir(nombre + " ,  su Indice de masa corporal es de : " + imcCalculado);
+
+</script>
